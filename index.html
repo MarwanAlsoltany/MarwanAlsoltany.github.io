@@ -5,8 +5,9 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="robots" content="INDEX, FOLLOW">
         <title>Marwan Al-Soltany</title>
-        <link rel="shortcut icon" href="https://via.placeholder.com/100/000000/FFFFFF/?text=@" type="image/x-icon">
+        <link rel="shortcut icon" href="data:image/svg+xml;base64,DQo8c3ZnIHZlcnNpb249IjEuMCIgd2lkdGg9IjUxMiIgaGVpZ2h0PSI1MTIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGNpcmNsZSBjeD0iMjU2IiBjeT0iMjU2IiByPSIyNTYiIGZpbGw9IiMxMTEiLz48ZyBmaWxsPSIjZmZmIj48cGF0aCBkPSJNMjQzLjggMjE3SDIxN2wtMS41LTU1LjJhMjYzLjQgMjYzLjQgMCAwIDEgLjQtMjkuM2wxLjMtMTguNC0xNC41IDgxaC0yM0wxNjQgMTE0YzEuNCAxNC4yIDIgMjcgMiAzOC40bC0uMSA5LjgtMSA1NC42aC0yNi4xbDcuMi0xMjguNmgzMS40bDE0LjMgODMuMSAxMy42LTgzLjFoMzEuM2w3LjMgMTI4LjZaTTMyNiAxODlsLTYuNyAyOGgtMzJsMzkuNS0xMjguN2gzNi45bDM5LjQgMTI4LjZoLTMyLjdsLTYuNy0yNy44SDMyNlptMzIuNy0yMS44LTE0LTU3LTEzLjkgNTdoMjcuOVpNMTQ2LjUgMzkyLjZWMjYzLjloMzAuNHYxMjguN2gtMzAuNFptNjYuNC0xMjguN2gzMmwtMzYuNCA1Ny44IDQwIDcwLjloLTM1LjJMMTc4IDMyMy45bDM1LTYwWk0zOTQuOSAzNTQuOWEzNyAzNyAwIDAgMS02LjMgMjEuMyA0MC45IDQwLjkgMCAwIDEtMTguMSAxNC40IDcwIDcwIDAgMCAxLTI4IDUuMWMtMjEuMyAwLTM4LjItNi4xLTUwLjgtMTguNUwzMDcgMzYwYzkuOCA4LjcgMjEuMyAxMyAzNC43IDEzIDYuNCAwIDExLjYtMS40IDE1LjUtNC4yIDMuOS0yLjggNS44LTYuNiA1LjgtMTEuNiAwLTQuNy0xLjYtOC40LTQuOS0xMWE1OC41IDU4LjUgMCAwIDAtMTguMy04LjEgNzkuMiA3OS4yIDAgMCAxLTMyLTE2LjIgMzIgMzIgMCAwIDEtOS41LTI0YzAtNy42IDItMTQuMyA2LjQtMjAgNC4yLTUuNyAxMC0xMCAxNy40LTEzIDcuNC0zIDE1LjYtNC40IDI0LjYtNC40IDE5IDAgMzQuMyA1LjYgNDYgMTYuN2wtMTQuMiAxNi41QTQ2LjQgNDYuNCAwIDAgMCAzNDkgMjgzYy01LjkgMC0xMC42IDEuMS0xNCAzLjNhMTAuNSAxMC41IDAgMCAwLTUgOS40YzAgMi43LjcgNSAyLjIgNi44IDEuNiAxLjkgNC4yIDMuNiA3LjcgNS4yIDMuNiAxLjcgOSAzLjYgMTYuMiA1LjggMTMuMSA0IDIyLjkgOSAyOS4yIDE1LjMgNi40IDYuMyA5LjYgMTUgOS42IDI2LjFaIiBzdHlsZT0idGV4dC10cmFuc2Zvcm06dXBwZXJjYXNlO3doaXRlLXNwYWNlOnByZSIgdHJhbnNmb3JtPSJtYXRyaXgoMS4wNDA1OCAwIDAgMS4wNDA1OCAtMjYuNSA0KSIvPjwvZz48L3N2Zz4=" type="image/x-icon">
         <link href="https://cdn.jsdelivr.net/npm/centum@latest/dist/centum.min.css" rel="stylesheet">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -55,8 +56,14 @@
                 text-decoration: none;
             }
             a:hover {
-                color: blue;
+                color: dodgerblue;
                 text-decoration: underline;
+            }
+
+            ul {
+                list-style: circle;
+                padding: 0 0 0 20px;
+                margin: 0;
             }
         </style>
     </head>
@@ -77,12 +84,50 @@
                         </p>
                         <p>
                             or find me online using this handle:
-                            <a href="https://github.com/MarwanAlsoltany">@MarwanAlsoltany</a>
+                            <a href="https://duckduckgo.com/?q=Marwan+Al-Soltany+%22MarwanAlsoltany%22">@MarwanAlsoltany</a>
                         </p>
+                        <p>&nbsp;&nbsp;&nbsp;</p>
+                        <p>You can also check out my work on <a href="https://github.com/MarwanAlsoltany">GitHub</a>.</p>
+                        <p>Here are my top 5 projects:</p>
+                        <ul id="repos">
+                            <li>Loading ...</li>
+                            <li>Loading ...</li>
+                            <li>Loading ...</li>
+                            <li>Loading ...</li>
+                            <li>Loading ...</li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </div>
+
+        <script>
+            const repos = document.getElementById('repos');
+
+            fetch('https://api.github.com/users/MarwanAlsoltany/repos')
+                .then(response => {
+                    if (response.ok) {
+                        return response.json();
+                    }
+
+                    response.json().then(json => console.error(json.message));
+
+                    throw new Error('GitHub API response was not OK. Status: ' + response.status);
+                })
+                .then(json => {
+                    json
+                        .sort((a, b) => b.stargazers_count - a.stargazers_count)
+                        .slice(0, 5)
+                        .forEach((repo, index) => {
+                            repos.children[index].innerHTML = `<a href="${repo.html_url}">${repo.name} (${repo.language})</a>`;
+                        });
+                })
+                .catch(error => {
+                    Array.from({length: 5}, (none, index) => {
+                        repos.children[index].innerHTML = `<span style="color:yellow;">FAILED:</span> ${error.message}`;
+                    });
+                });
+        </script>
     </body>
 
 </html>
